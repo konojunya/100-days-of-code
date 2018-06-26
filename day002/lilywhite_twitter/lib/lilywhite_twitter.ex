@@ -1,18 +1,13 @@
 defmodule LilywhiteTwitter do
-  @moduledoc """
-  Documentation for LilywhiteTwitter.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> LilywhiteTwitter.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def loop do
+    st = IO.gets "status:"
+    ExTwitter.update st
+    loop
   end
+
+  def main(args) do
+    loop
+  end
+
 end
